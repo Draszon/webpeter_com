@@ -1,1 +1,1 @@
-This is my webpage project with Laravel for the first time ever!
+This is my website project with Laravel for the first time ever!
