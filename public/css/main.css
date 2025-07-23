@@ -1,0 +1,120 @@
+:root {
+  --main-bg:            #1A1A1A;
+  --section-card-input: #2A2A2A;
+  --buttons-link:     	#00B86B;
+  --button-hover:       #009F5F;
+  --main-text:          #FFFFFF;
+  --simple-text:        #CCCCCC;
+  --placeholder:       	#999999;
+}
+
+* {
+    box-sizing: border-box;
+    
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family:      "Poppins", sans-serif;
+    font-weight:      400;
+    font-style:       normal;
+    color:            var(--simple-text);
+    background-color: var(--main-bg);
+    font-size:        1.125rem;
+}
+
+section {
+    padding: 25px 0;
+}
+
+a {
+    color: var(--main-text);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:hover {
+    color: var(--button-hover);
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+/* HEADER */
+
+header {
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+nav>ul {
+    display: flex;
+    flex-direction: row;
+    font-weight: 500;
+}
+
+.nav-item {
+    margin: 20px;
+    color: var(--simple-text);
+}
+
+.logo {
+    font-size: 20px;
+    margin: 20px;
+    font-weight: 600;
+}
+/* HEADER */
+
+
+/* INTRODUCTION SECTION */
+
+.me {
+    display: flex;
+    align-items: center;
+}
+
+.introduction {
+    background-position: center;
+    background-size: cover;
+}
+
+.introduction-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.introduction-logo img {
+    height: 400px;
+}
+
+.introduction-title {
+
+    margin-bottom: 50px;
+}
+
+.introduction-text {
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+}
+
+/* INTRODUCTION SECTION */
+
+
+/* FOOTER */
+
+footer {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* FOOTER */
