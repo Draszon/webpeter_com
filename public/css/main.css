@@ -8,9 +8,13 @@
   --placeholder:       	#999999;
 }
 
+::selection {
+  background: var(--button-hover);
+  color: var(--main-bg);
+}
+
 * {
     box-sizing: border-box;
-    
 }
 
 html { scroll-behavior: smooth; }
@@ -25,7 +29,7 @@ body {
 }
 
 section {
-    padding: 25px 0;
+    padding: 100px 0;
 }
 
 a {
@@ -35,21 +39,45 @@ a {
 }
 
 a:hover {
-    color: var(--button-hover);
+    color: var(--buttons-link);
 }
 
 h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-weight: 500;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+p {
+    font-size: 1.3rem;
+    line-height: 2rem;
+}
+
+.section-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: row;
 }
 
 /* HEADER */
 
 header {
-    width: 100vw;
+    width: 100%;
+
+}
+
+.header-wrapper {
+    max-width: 1400px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin: 0 auto;
 }
 
 nav>ul {
@@ -83,29 +111,92 @@ nav>ul {
     background-size: cover;
 }
 
-.introduction-wrapper {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 1rem;
-    display: flex;
-    flex-direction: row;
-}
-
 .introduction-logo img {
-    height: 400px;
+    height: 600px;
 }
 
 .introduction-title {
-
-    margin-bottom: 50px;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--placeholder);
 }
 
-.introduction-text {
+.titulus {
+    margin-bottom: 50px;
     font-size: 1.5rem;
-    line-height: 2.5rem;
 }
 
 /* INTRODUCTION SECTION */
+
+
+/* ABOUT ME */
+
+.about-me {
+    background-color: var(--section-card-input);
+}
+
+.me-img img {
+    height: 400px;
+}
+
+.aboutme-text {
+    padding: 0 20px;
+}
+
+.aboutme-text>h2 {
+    border-bottom: 1px solid var(--placeholder);
+    margin-bottom: 50px;
+    padding-bottom: 10px;
+}
+
+/* ABOUT ME */
+
+
+/* TECHNOLOGY */
+
+.technology-wrapper {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--section-card-input);
+    border-radius: 20px;
+    padding: 50px;
+}
+
+.technology-wrapper>img {
+    height: 500px;
+    margin: 50px 0;
+}
+
+.technology-title {
+    text-align: center;
+}
+
+.technology-card-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.technology-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    padding: 20px 40px;
+    border-radius: 50px 25px;
+}
+
+.technology-logo {
+    height: 100px;
+}
+
+.technology-name {
+    text-align: center;
+    padding-top: 10px;
+    color: var(--main-bg);
+}
+
+/* TECHNOLOGY */
 
 
 /* FOOTER */
