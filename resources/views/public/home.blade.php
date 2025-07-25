@@ -73,10 +73,45 @@
         </div>
     </div>
 </section>
-
+<!--
 <section class="projects" id="projects">
     <div class="section-wrapper projects-wrapper">
-        
+        <h2 class="projects-title">Korábbi munkáim</h2>
+        <div class="my-projects">
+            <a href="https://kuckotanuloszoba.hu" target="_blank" rel="noopener noreferrer">
+                <div class="kucko-project project">
+                    <img src="{{ asset('images/kucko.jpg') }}" alt="kuckó tanuloszóba">
+                    <h3>Kuckó Tanulószoba</h3>
+                </div>
+            </a>
+            <a href="https://negyevszakdemjen.hu" target="_blank" rel="noopener noreferrer">
+                <div class="kucko-project project">
+                    <img src="{{ asset('images/negyevszak.jpg') }}" alt="négy évszak vendégház">
+                    <h3>Négy évszak vendégház</h3>
+                </div>
+            </a>
+        </div>
     </div>
 </section>
+
+<section class="contacts" id="contact">
+    <div class="section-wrapper contacts-wrapper">
+        <h2 class="contacts-title">Lépj kapcsolatba velem</h2>
+        <div class="contact">
+            <div>
+                <a href="https://github.com/draszon" target="_blank" rel="noopener noreferrer">
+                    <img class="contact-logo" src="{{ asset('images/github.svg') }}" alt="github logo">
+                    <p>Github</p>
+                </a>
+            </div>
+            <div>
+                <a href="https://hu.linkedin.com/in/p%C3%A9ter-szentgy%C3%B6rgyi-5a4644375" target="_blank" rel="noopener noreferrer">
+                    <img class="contact-logo" src="{{ asset('images/linkedin.svg') }}" alt="linkedin logo">
+                    <p>LinkedIn</p>
+                </a>
+            </div>
+        </div>
+
+    </div>
+</section>-->
 @endsection
