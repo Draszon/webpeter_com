@@ -66,7 +66,7 @@
 	</main>
 
 	<footer>
-		<p>© 2025 DRASZON. Minden jog fenntartva.</p>
+		<p>© <span id="footer-year"></span> DRASZON. Minden jog fenntartva.</p>
 	</footer>
 </body>
 </html>     

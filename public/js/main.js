@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const bgMenuOpen = document.getElementById("bm-open");
     const bgMenuClose = document.getElementById("bm-close");
     const mobileNav = document.getElementById("mobile-nav");
+    const footerYear = document.getElementById("footer-year");
 
     const open = () => {
         bgMenuClose.classList.add("mobile-nav-close");
@@ -19,4 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     bgMenuClose.addEventListener("click", open);
     bgMenuOpen.addEventListener("click", close);
+
+    footerYear.textContent = new Date().getFullYear();
 });
