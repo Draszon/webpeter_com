@@ -5,6 +5,16 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+    <meta name="description"
+		content="Péter vagyok, hobbi programozó és
+    	webfejlesztő. Régebben Draszonként 
+    	ismerhettél YouTube-on és Twitchen, ahol gameplay 
+    	tartalmakat osztottam meg.">
+
+    <meta name="keywords" content="webdesign, weboldal, készítés, design, kódolás, hobbi, dizájn, fejlesztés">
+    <meta name="author" content="WEB-Peter">
+    <meta name="robots" content="index, follow">
+
 	<link rel="icon" type="image/png" href="{{ asset('images/icon_logo.png') }}">
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,8 +47,18 @@
 					<li class="nav-item"><a href="#contact">Elérhetőségek</a></li>
 				</ul>
 			</nav>
+			<img class="burger-icon mobile-nav-close" id="bm-open" src="{{ asset('images/burger-bar-open.svg') }}" alt="burger ikon">
+			<img class="burger-icon " id="bm-close" src="{{ asset('images/burger-bar-close.svg') }}" alt="burger ikon">
 		</div>
-		
+		<div class="mobile-nav" id="mobile-nav">
+			<ul>
+				<li class="nav-item"><a href="#nav">Főoldal</a></li>
+				<li class="nav-item"><a href="#about-me">Rólam</a></li>
+				<li class="nav-item"><a href="#technology">Technológiák</a></li>
+				<li class="nav-item"><a href="#projects">Projektek</a></li>
+				<li class="nav-item"><a href="#contact">Elérhetőségek</a></li>
+			</ul>
+		</div>
 	</header>
 
 	<main>

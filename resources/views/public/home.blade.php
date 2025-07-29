@@ -34,9 +34,7 @@
                 Főállásban rendszerüzemeltetéssel foglalkozom, ahol Linux-alapú
                 rendszerek stabil, biztonságos működéséért felelek. Ez a háttér
                 fontos alapot ad a technikai szemléletemhez, de ami igazán
-                lelkesít, az a webfejlesztés.
-            </p>
-            <p>
+                lelkesít, az a webfejlesztés. <br>
                 A kódolás számomra nemcsak eszköz,
                 hanem kreatív eszköz – szeretek ötleteket megvalósítani,
                 funkciókat tervezni és működő webalkalmazásokat építeni.
@@ -52,7 +50,7 @@
 <section class="technologies" id="technology">
     <div class="technology-wrapper section-wrapper">
         <h2 class="technology-title">Technológiák amiket használok</h2>
-        <img src="{{ asset('images/bugfix.svg') }}" alt="technológiák">
+        <img class="tech-logo" src="{{ asset('images/bugfix.svg') }}" alt="technológiák">
         <div class="technology-card-wrapper">
             <div class="technology-card">
                 <img class="technology-logo" src="{{ asset('images/html-5.png') }}" alt="html5 logo">
@@ -73,7 +71,7 @@
         </div>
     </div>
 </section>
-<!--
+
 <section class="projects" id="projects">
     <div class="section-wrapper projects-wrapper">
         <h2 class="projects-title">Korábbi munkáim</h2>
@@ -113,5 +111,5 @@
         </div>
 
     </div>
-</section>-->
+</section>
 @endsection
