@@ -439,6 +439,10 @@ footer p {
         flex-wrap: wrap;
     }
 
+    .contact-logo {
+        height: 70px;
+    }
+
     footer p {
         text-align: center;
     }
