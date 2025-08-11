@@ -11,6 +11,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', [AdminHomeController::class, 'index'])->name('dashboard');
     Route::put('/editintroduction/{id}', [AdminHomeController::class, 'editIntroduction'])->name('introduction.edit');
     Route::put('/editaboutme/{id}', [AdminHomeController::class, 'editAboutme'])->name('aboutme.edit');
+    Route::delete('/deletetechnology/{id}', [AdminHomeController::class, 'deleteTechnology'])->name('technology.delete');
+    Route::put('/edittechnology/{id}', [AdminHomeController::class, 'editTechnology'])->name('technology.edit');
+    Route::post('/storetechnology', [AdminHomeController::class, 'storeTechnology'])->name('technology.store');
 });
 
 Route::middleware('auth')->group(function () {

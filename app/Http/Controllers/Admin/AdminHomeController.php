@@ -60,4 +60,57 @@ class AdminHomeController extends Controller
             ->route('dashboard')
             ->with('success', 'Sikeres adatmódosítás!');
     }
+
+    public function deleteTechnology($id) {
+        $technology = Technologie::findOrFail($id);
+
+        $imagePath = public_path('images/' . $technology->logo);
+        if (file_exists($imagePath)) {
+            unlink($imagePath);
+        }
+
+        $technology->delete();
+
+        return redirect()
+            ->route('dashboard')
+            ->with('success', 'Sikeres törlés!');
+    }
+
+    public function editTechnology(Request $request, $id) {
+        $request->validate([
+            'name' => 'required'
+        ], [
+            '*.required' => 'Minden mezőt ki kell tölteni!'
+        ]);
+
+        $technology = Technologie::findOrFail($id);
+        $technology->name = $request->input('name');
+        $technology->save();
+
+        return redirect()
+            ->route('dashboard')
+            ->with('success', 'Sikeres adatmódosítás!');
+    }
+
+    public function storeTechnology(Request $request) {
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'logo' => 'required|image|mimes:jpeg,png,jpg,svg|max:2048'
+        ]);
+
+        $image = $request->file('logo');
+        $imageName = $image->getClientOriginalName();
+        $destinationPath = public_path('images');
+
+        $image->move($destinationPath, $imageName);
+
+        $technology = new Technologie();
+        $technology->name = $validated['name'];
+        $technology->logo = $imageName;
+        $technology->save();
+
+        return redirect()
+            ->route('dashboard')
+            ->with('success', 'Sikeres feltöltés!');
+    }
 }
