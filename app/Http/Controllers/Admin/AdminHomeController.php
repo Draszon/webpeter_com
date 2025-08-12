@@ -113,4 +113,19 @@ class AdminHomeController extends Controller
             ->route('dashboard')
             ->with('success', 'Sikeres feltöltés!');
     }
+
+    public function deleteProject($id) {
+        $project = Project::findOrFail($id);
+
+        $imagePath = public_path('images/' . $project->logo);
+        if (file_exists($imagePath)) {
+            unlink($imagePath);
+        }
+
+        $project->delete();
+
+        return redirect()
+            ->route('dashboard')
+            ->with('success', 'Sikeres törlés!');
+    }
 }

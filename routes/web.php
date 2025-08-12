@@ -14,6 +14,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::delete('/deletetechnology/{id}', [AdminHomeController::class, 'deleteTechnology'])->name('technology.delete');
     Route::put('/edittechnology/{id}', [AdminHomeController::class, 'editTechnology'])->name('technology.edit');
     Route::post('/storetechnology', [AdminHomeController::class, 'storeTechnology'])->name('technology.store');
+    Route::delete('/deleteproject/{id}', [AdminHomeController::class, 'deleteProject'])->name('project.delete');
 });
 
 Route::middleware('auth')->group(function () {
