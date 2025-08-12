@@ -120,7 +120,7 @@
                     <h1 class="section-title">Projektek szekció szerkesztése</h1>
                     @foreach ($projects as $project)
 
-                        <form action="" method="post" class="technology-form">
+                        <form action="{{ route('project.edit', $project->id) }}" method="post" class="technology-form">
                             @csrf
                             @method('PUT')
 
@@ -151,7 +151,7 @@
                     @endif
 
                     <h1 class="section-title" style="margin-top: 20px">Új projekt hozzáadása</h1>
-                    <form action="" method="post" enctype="multipart/form-data">
+                    <form action="{{ route('project.store') }}" method="post" enctype="multipart/form-data">
                         @csrf
                         
                         <div class="input-field-wrapper">
@@ -161,7 +161,58 @@
                             <label for="link" class="text">Link</label>
                             <input type="url" name="link" id="link" require>
 
-                            <input type="file" name="project-logo" id="logo" accept="image/*" required>
+                            <input type="file" name="projectlogo" id="logo" accept="image/*" required>
+                        </div>
+                        <button class="btn" type="submit">Feltöltés</button>
+                    </form>
+                </div>
+
+                <div class="p-6 text-gray-900">
+                    <h1 class="section-title">Elérhetőségek szekció szerkesztése</h1>
+                    @foreach ($contacts as $contact)
+
+                        <form action="{{ route('contact.edit', $contact->id) }}" method="post" class="technology-form">
+                            @csrf
+                            @method('PUT')
+
+                            <div class="input-field-wrapper">
+                                <label for="name" class="text">Elérhetőség</label>
+                                <input type="text" name="name" id="name" value="{{ $contact->name }}">
+                            </div>
+
+                            <div class="input-field-wrapper">
+                                <label for="link" class="text">URL</label>
+                                <input type="text" name="link" id="link" value="{{ $contact->url }}">
+                            </div>
+
+                            <button class="btn" type="submit">Frissítés</button>
+                        </form>
+
+                        <form action="{{ route('contact.delete', $contact->id) }}" method="post" class="technology-form">
+                            @csrf
+                            @method('DELETE')
+
+                            <button class="btn" type="submit">Törlés</button>
+                        </form>
+                    @endforeach
+                    @if (session('success'))
+                        <div class="success-edit">
+                            <p>{{ session('success') }}</p>
+                        </div>
+                    @endif
+
+                    <h1 class="section-title" style="margin-top: 20px">Új elérhetőség hozzáadása</h1>
+                    <form action="{{ route('contact.store') }}" method="post" enctype="multipart/form-data">
+                        @csrf
+                        
+                        <div class="input-field-wrapper">
+                            <label for="name" class="text">Elérhetőség neve</label>
+                            <input type="text" name="name" id="name" required>
+
+                            <label for="link" class="text">Link</label>
+                            <input type="url" name="link" id="link" require>
+
+                            <input type="file" name="contactlogo" id="logo" accept="image/*" required>
                         </div>
                         <button class="btn" type="submit">Feltöltés</button>
                     </form>

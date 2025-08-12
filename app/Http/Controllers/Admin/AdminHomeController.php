@@ -96,6 +96,8 @@ class AdminHomeController extends Controller
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'logo' => 'required|image|mimes:jpeg,png,jpg,svg|max:2048'
+        ], [
+            '*.required' => 'Helytelen érték!'
         ]);
 
         $image = $request->file('logo');
@@ -127,5 +129,92 @@ class AdminHomeController extends Controller
         return redirect()
             ->route('dashboard')
             ->with('success', 'Sikeres törlés!');
+    }
+
+    public function editProject(Request $request, $id) {
+        $request->validate([
+            'name' => 'required|max:255',
+            'link' => 'required|url',
+        ]);
+
+        $project = Project::findOrFail($id);
+        $project->name = $request->input('name');
+        $project->url = $request->input('link');
+        $project->save();
+
+        return redirect()
+            ->route('dashboard')
+            ->with('success', 'Sikeres adatmódosítás!');
+    }
+
+    public function storeProject(Request $request) {
+        $validate = $request->validate([
+            'name' => 'required|string|max:255',
+            'link' => 'required|url',
+            'projectlogo' => 'required|image|mimes:jpeg,png,jpg|max:2048'
+        ]);
+
+        $image = $request->file('projectlogo');
+        $imageName = $image->getClientOriginalName();
+        $destinationPath = public_path('images');
+
+        $image->move($destinationPath, $imageName);
+
+        $project = new Project();
+        $project->name = $validate['name'];
+        $project->url = $validate['link'];
+        $project->logo = $imageName;
+        $project->save();
+
+        return back()->with('success', 'Sikeres feltöltés!');
+    }
+
+    public function editContact (Request $request, $id) {
+        $request->validate([
+            'name' => 'required|max:255',
+            'link' => 'required|url'
+        ]);
+
+        $contact = Contact::findOrFail($id);
+        $contact->name = $request->input('name');
+        $contact->url = $request->input('link');
+        $contact->save();
+
+        return back()->with('success', 'Sikeres adatmódosítás');
+    }
+
+    public function deleteContact($id) {
+        $contact = Contact::findOrFail($id);
+
+        $imagePath = public_path('images/' . $contact->logo);
+        if (file_exists($imagePath)) {
+            unlink($imagePath);
+        }
+
+        $contact->delete();
+
+        return back()->with('success', 'Sikeres törlés!');
+    }        
+
+     public function storeContact(Request $request) {
+        $validate = $request->validate([
+            'name' => 'required|string|max:255',
+            'link' => 'required|url',
+            'contactlogo' => 'required|image|mimes:jpeg,png,jpg|max:2048'
+        ]);
+
+        $image = $request->file('contactlogo');
+        $imageName = $image->getClientOriginalName();
+        $destinationPath = public_path('images');
+
+        $image->move($destinationPath, $imageName);
+
+        $contact = new Contact();
+        $contact->name = $validate['name'];
+        $contact->url = $validate['link'];
+        $contact->logo = $imageName;
+        $contact->save();
+
+        return back()->with('success', 'Sikeres feltöltés!');
     }
 }
