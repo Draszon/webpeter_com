@@ -102,7 +102,8 @@ class AdminHomeController extends Controller
 
         $image = $request->file('logo');
         $imageName = $image->getClientOriginalName();
-        $destinationPath = public_path('images');
+        //$destinationPath = public_path('images');
+        $destinationPath = env('PUBLIC_PATH', public_path('images'));
 
         $image->move($destinationPath, $imageName);
 
@@ -156,7 +157,8 @@ class AdminHomeController extends Controller
 
         $image = $request->file('projectlogo');
         $imageName = $image->getClientOriginalName();
-        $destinationPath = public_path('images');
+        //$destinationPath = public_path('images');
+        $destinationPath = env('PUBLIC_PATH', public_path('images'));
 
         $image->move($destinationPath, $imageName);
 
@@ -205,7 +207,8 @@ class AdminHomeController extends Controller
 
         $image = $request->file('contactlogo');
         $imageName = $image->getClientOriginalName();
-        $destinationPath = public_path('images');
+        //$destinationPath = public_path('images');
+        $destinationPath = env('PUBLIC_PATH', public_path('images'));
 
         $image->move($destinationPath, $imageName);
 
